@@ -1,0 +1,13 @@
+USE DBDevOpsTest
+GO
+IF EXISTS (SELECT 1 FROM SYS.procedures WHERE [NAME] = N'usp_GetCourse')
+BEGIN
+	DROP PROCEDURE usp_GetCourse
+END
+GO
+CREATE PROCEDURE usp_GetCourse
+AS
+BEGIN
+	SELECT CourseId,CourseName FROM COURSE 
+END
+GO
